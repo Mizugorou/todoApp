@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Todo App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,67 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container">
+    <!-- ประกาศตัวแปรในAngular -->
+    <h5>ประกาศตัวแปรในAngular</h5>
+    <button class="button-style button-console" (click)="logInConsole()">ดูค่าด้วยconsole.log</button>
+
+    <hr class="hr-line"/>
+
+    <!-- ตัวแย่างการแสดงค่า class css จาก home.page.scss-->
+    <h5>ตัวแย่างการแสดงค่า class css</h5>
+    <div class="example-container">
+      <div>แสดงปกติ ด้วย display: block แนวตั้ง</div>
+      <div class="example-1">{{product.name}}</div>
+      <div class="example-2">{{product.description}}</div>
+    </div>
+
+    <div class="example-container">
+      <div>display: inline แนวนอน</div> 
+      <!-- inline แนวนอน คือแถวเดียวกันต้องมีcssว่าdisplay: inline -->
+      <div class="example-1 inline">{{product.name}}</div>
+      <div class="example-2 inline">{{product.description}}</div>
+    </div>
+
+    <div class="example-container flex">
+      <div>display: flex จัดเรียงด้วยlayout</div> 
+      <!-- display: flex ตัวด้านในจะแสดงผลตามตัวdisplay:flexที่คลุมอยู่ -->
+      <div class="example-1">{{product.name}}</div>
+      <div class="example-2">{{product.description}}</div>
+    </div>
+
+    <hr class="hr-line"/>
+    
+    <!-- todo แบบ javascript -->
+    <h5> todo แบบ javascript</h5>
+    <div class="header-row">
+      <input id="inputBlock" placeholder="ลองใส่คำดู" type="text" name="name" value="a"/>
+      <button class="button-style blue" (click)="addTodo_normalJavascript()">ใส่</button>
+    </div>
+    <div id="container-normaljs">
+      <div class="card">
+        <span>list แรกฝั่ง normal Javascript</span>
+      </div>
+    </div>
+
+    <hr class="hr-line"/>
+
+    <!-- todo แบบ angular -->
+    <h5> todo แบบ angular</h5>
+    <div id="anugular-method">
+      <div class="header-row">
+        <!-- คำสั่งใน Angular: ngModel คือการเชื่อมระหว่างหน้าจอกับตัวแปรให้มีค่าเหมือนกัน หรือเรียกว่า two-way binding -->
+        <input placeholder="ใส่สิ่งที่ต้องการทำ2" [(ngModel)]="inputValue_Angular"/>
+        <button class="button-style red" (click)="addTodo_angular()">เพิ่ม</button>
+      </div>
+      <div class="container-angular">
+        <!-- วนลูปด้วย ngFor -->
+        <div class="card" *ngFor="let list of lists_Angular">
+          <!-- ใส่เงื่อนไขการแสดงด้วย ngIf -->
+          <span class="word-long" *ngIf="isLongWord(list)">ยาว</span>
+          <span>{{list}}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>

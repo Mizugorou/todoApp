@@ -1,31 +1,78 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.container{
+  padding: 20px;
+}
+.hr-line {
+  height: 1px;
+  background: black;
+}
+// ตัวแย่างการแสดงค่า class css
+.example-container {
+  border: solid 1px red; // ขอบ
+  background: rgb(0,0,0); //พื้นหลัง
+  color: rgb(255,255,255); //สีฟ้อน
+  font-weight: 500; //ความหนาฟ้อน
+  font-size: 20px; //ขนาดฟ้อน
+  padding: 5px; //พื้นที่ระหว่าง ขอบและเนื้อหา
+  margin: 10px; //พื้นที่ระหว่าง ข้างนอกและขอบ
+  width: 315px; // ขนาดแนวนอน
+  height: 130px; // ขนาดแนวตั้ง
+  // ทำให้ตัวหนังสือเป็น ... เมื่อเกินขนาดบลีอก
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.example-1{
+  border: solid 1px rgb(0, 255, 42);
+}
+.example-2{
+  border: solid 1px rgb(255, 0, 0);
+}
+.inline {
+  display: inline;
+}
+.flex {
+  display: flex;
+  flex-direction: column; //row แนวนอน columnแนวตั้ง
+  align-items: center; // ถ้าflex-direction: column; flex-start=ซ้าย center=กลาง flex-end=ขวา, ถ้าflex-direction: row; flex-start=บน center=กลาง flex-end=ล่าง
+  justify-content: center; // ถ้าflex-direction: column; flex-start=บน center=กลาง flex-end=ล่าง space-between=ชิดชอบ, ถ้าflex-direction: row; flex-start=ซ้าย center=กลาง flex-end=ขวา space-between=ชิดชอบ
 }
 
-#container strong {
+// สำหรับ todo
+.card {
+  border: solid 1px rgb(108, 108, 108);
+  background: rgb(197, 197, 197);
+  color: #FFF;
+  font-weight: 100;
   font-size: 20px;
-  line-height: 26px;
+  text-align: left;
+  padding: 12px;
+  margin: 10px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.header-row{
+  display: flex;
+  flex-direction: row;
 }
 
-#container a {
-  text-decoration: none;
+.button-style {
+  margin-left: 10px;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  border: solid 1px rgb(82, 82, 82);
+  box-shadow: 2px 1px 10px 0px rgb(159, 159, 159);
+}
+.red {
+  background: red;
+}
+.blue {
+  background: rgb(11, 169, 205);
+}
+.button-console {
+  color: black;
+  margin-bottom: 10px;
 }
 
-ion-content ion-toolbar {
-  --background: translucent;
+.word-long {
+  margin-right: 10px;
 }
